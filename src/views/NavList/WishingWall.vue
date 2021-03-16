@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'VowWall'
+  name: 'WishingWall'
 }
 </script>
 
