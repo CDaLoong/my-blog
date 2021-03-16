@@ -1,0 +1,32 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2013-9-30: Created.
+-->
+<svg>
+<metadata>
+Created by iconfont
+</metadata>
+<defs>
+
+<font id="iconfont" horiz-adv-x="1024" >
+  <font-face
+    font-family="iconfont"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1024"
+    ascent="896"
+    descent="-128"
+  />
+    <missing-glyph />
+    
+    <glyph glyph-name="guanbi1" unicode="&#58945;" d="M512 793.6a409.6 409.6 0 1 1 409.6-409.6 409.6 409.6 0 0 1-409.6 409.6z m181.248-518.144a51.2 51.2 0 0 0-72.704-72.704L512 311.808l-108.544-109.056a51.2 51.2 0 0 0-72.704 72.704L439.808 384 330.752 492.544a51.2 51.2 0 0 0 72.704 72.704L512 456.192l108.544 109.056a51.2 51.2 0 0 0 72.704-72.704L584.192 384z"  horiz-adv-x="1024" />
+
+    
+    <glyph glyph-name="goutongye_santiaogang_tiaozhuanxuanzehaizi" unicode="&#58936;" d="M189.62963 782.222222v-196.683852h1061.925926V782.222222H189.62963z m0-477.601185h1061.925926v196.683852H189.62963v-196.683852zM189.62963 23.703704h1061.925926v196.683852H189.62963V23.703704z"  horiz-adv-x="1403" />
+
+    
+
+
+  </font>
+</defs></svg>
