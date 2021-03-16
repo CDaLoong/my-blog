@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import home from '../views/NavList/HomePage'
 
 Vue.use(VueRouter)
 
@@ -10,7 +11,7 @@ const routes = [
   },
   {
     path: '/home',
-    component: () => import('../views/NavList/HomePage')
+    component: home
   },
   {
     path: '/blog',
@@ -21,8 +22,8 @@ const routes = [
     component: () => import('../views/NavList/Essay')
   },
   {
-    path: '/vow',
-    component: () => import('../views/NavList/VowWall')
+    path: '/WishingWall',
+    component: () => import('../views/NavList/WishingWall')
   },
   {
     path: '/about',

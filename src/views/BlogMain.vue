@@ -1,11 +1,11 @@
 <template>
   <div class="main">
-    <div class="nav-box" :class="{ home: home }">
-      <div class="logo" @click="HomeShow('/home')">
-        <router-link to="/home"></router-link>
+    <div class="nav-box" :class="{ home: isHome }">
+      <div class="logo">
+<!--        <router-link to="/home">小龙哥</router-link>-->
       </div>
       <div class="nav-list">
-        <router-link v-for="nav in navList" :key="nav.url" @click.native="HomeShow(nav.url)" to="nav.url">{{ nav.title }}</router-link>
+        <router-link v-for="nav in navList" :key="nav.url" @click.native="HomeShow(nav.url)" :to="nav.url">{{ nav.title }}</router-link>
       </div>
       <div
         class="nav-btn iconfont icon-nav-btn"
@@ -13,19 +13,21 @@
       ></div>
       <div class="btn-box" :class="{ show: BtnShow }">
         <div class="btn-logo">
-          <div class="logo" @click="HomeShow('/home')"><router-link to="/home">小龙哥</router-link></div>
+          <div class="logo">
+<!--            <router-link to="/home">小龙哥</router-link>-->
+          </div>
         </div>
         <div
           class="btn-close iconfont icon-close-btn"
           @click="BtnShow = !BtnShow"
         ></div>
         <div class="btn-list" ref="nav">
-          <router-link v-for="nav in navList" :key="nav.url" @click.native="HomeShow(nav.url)" to="nav.url">{{ nav.title }}</router-link>
+          <router-link v-for="nav in navList" :key="nav.url" @click.native="HomeShow(nav.url)" :to="nav.url">{{ nav.title }}</router-link>
         </div>
       </div>
     </div>
-    <div class="container">
-      <router-view></router-view>
+    <div class="container" :class="{ containerTop: isHome }">
+      <router-view />
     </div>
   </div>
 </template>
@@ -35,14 +37,15 @@ export default {
   data () {
     return {
       BtnShow: false,
-      home: false,
+      isHome: true,
+      navHeight: '',
       navList: [
         {
           url: '/home',
           title: 'Home'
         },
         {
-          url: '/share',
+          url: '/blog',
           title: 'Blog'
         },
         {
@@ -50,7 +53,7 @@ export default {
           title: 'Essay'
         },
         {
-          url: '/vow',
+          url: '/wishing',
           title: 'WishingWall'
         },
         {
@@ -60,28 +63,19 @@ export default {
       ]
     }
   },
+  computed: {
+  },
+  created () {
+    this.isHome = this.$route.path === '/home'
+  },
   methods: {
     HomeShow (btn) {
-      this.home = btn === '/home'
+      this.isHome = btn === '/home'
     }
   },
   mounted () {
-    // this.$refs.nav.children.forEach( (item) => {
-    //   console.log(item.innerText)
-    //   item.onclick = (item) => {
-
-    //     if(item.innerText === '主页'){
-    //         this.HomeShow('home');
-    //         console.log(item)
-    //     }else{
-    //         this.HomeShow('else');
-    //     }
-
-    //   }
-    // })
   },
   watch: {
-
   }
 }
 </script>
@@ -103,12 +97,15 @@ export default {
   //logo
   .logo {
     box-sizing: border-box;
-    height: 48px;
-    width: 200px;
+    height: 66px;
+    width: 236px;
     text-align: center;
-    line-height: 48px;
-    background-color: slateblue;
-    margin-left: 20px;
+    line-height: 66px;
+    background-image: url("../assets/public/CDaLoong-logo.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 36px;
     cursor: pointer;
 
     a {
@@ -126,11 +123,12 @@ export default {
     .nav-list {
       box-sizing: border-box;
       width: 600px;
-      height: 48px;
-      line-height: 48px;
+      height: 66px;
+      line-height: 66px;
+      font-size: 20px;
       display: flex;
       justify-content: space-around;
-      margin-right: 100px;
+      margin-right: 66px;
       a {
         box-sizing: border-box;
         text-decoration: none;
@@ -153,10 +151,16 @@ export default {
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+    display: none;
   }
   .nav-btn:hover {
     color: #24c3b5;
  }
+  @media (max-width: 992px) {
+    .nav-btn{
+      display: block;
+    }
+  }
   //下拉导航页面
   .btn-box {
     width: 300px;
@@ -215,28 +219,16 @@ export default {
 .nav-box.home {
   height: 100px;
   background-color: #fff;
-  .logo {
-    height: 60px;
-    line-height: 60px;
-    background-color: darkcyan;
-  }
   .nav-btn{
     color: #000;
   }
   .nav-btn:hover {
     color: #24c3b5;
- }
+  }
 
   @media (min-width: 992px) {
     //导航列表
     .nav-list {
-      box-sizing: border-box;
-      width: 600px;
-      height: 60px;
-      line-height: 60px;
-      display: flex;
-      justify-content: space-around;
-      margin-right: 100px;
       color: #000;
       a {
         box-sizing: border-box;
@@ -256,6 +248,9 @@ export default {
 .container {
   width: 100%;
   height: 1000px;
-  background: skyblue;
+  margin-top: 80px;
+}
+.containerTop {
+  margin-top: 100px;
 }
 </style>
