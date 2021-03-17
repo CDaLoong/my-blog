@@ -22,7 +22,6 @@ export default {
     for (let i = 1; i <= 6; i++) {
       this.imageUrl.push({ url: require(`../../assets/public/images/${i}.png`), title: `${i}.png` })
     }
-    console.log(this.imageUrl)
   }
 }
 </script>

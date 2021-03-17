@@ -16,10 +16,10 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-nav-btn::before{
-    content: '\e638';
+.icon-TextAlignJustify::before{
+    content: '\e6f5';
 }
 
-.icon-close-btn::before{
-    content: '\e641'
+.icon-github::before{
+    content: '\e638';
 }

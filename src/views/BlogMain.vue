@@ -8,7 +8,7 @@
         <router-link v-for="nav in navList" :key="nav.url" @click.native="HomeShow(nav.url)" :to="nav.url">{{ nav.title }}</router-link>
       </div>
       <div
-        class="nav-btn iconfont icon-nav-btn"
+        class="nav-btn iconfont icon-TextAlignJustify"
         @click="BtnShow = !BtnShow"
       ></div>
       <div class="btn-box" :class="{ show: BtnShow }">
@@ -18,7 +18,7 @@
           </div>
         </div>
         <div
-          class="btn-close iconfont icon-close-btn"
+          class="btn-close iconfont icon-TextAlignJustify"
           @click="BtnShow = !BtnShow"
         ></div>
         <div class="btn-list" ref="nav">
@@ -93,6 +93,7 @@ export default {
   position: fixed;
   color: #fff;
   top: 0;
+  z-index: 10000;
 
   //logo
   .logo {
@@ -247,8 +248,8 @@ export default {
 
 .container {
   width: 100%;
-  height: 1000px;
   margin-top: 80px;
+  box-sizing: border-box;
 }
 .containerTop {
   margin-top: 100px;
