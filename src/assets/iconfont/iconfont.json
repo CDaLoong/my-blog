@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1207885",
+      "name": "watched",
+      "font_class": "watched",
+      "unicode": "e676",
+      "unicode_decimal": 58998
+    },
+    {
       "icon_id": "17412839",
       "name": "Text Align Justify",
       "font_class": "TextAlignJustify",

@@ -53,7 +53,7 @@ export default {
           title: 'Essay'
         },
         {
-          url: '/wishing',
+          url: '/WishingWall',
           title: 'WishingWall'
         },
         {
@@ -89,7 +89,7 @@ export default {
   width: 100%;
   height: 80px;
   align-items: center;
-  background-color: rgba(47, 47, 47, 0.98);
+  background-color: #202020;
   position: fixed;
   color: #fff;
   top: 0;

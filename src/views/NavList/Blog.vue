@@ -1,7 +1,7 @@
 <template>
   <el-row>
     <el-col :xs="4" :sm="4" :md="4" :lg="4" :xl="4" :class="{ left: true }">
-      <el-card shadow="never" :body-style="{ padding: '48px', textAlign: 'center', background: '#202020', maxHeight: '288px' }">
+      <el-card shadow="never" :body-style="{ padding: '48px', textAlign: 'center', background: 'rgb(47, 47, 47)', maxHeight: '288px' }">
         <img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png" class="image">
         <div class="my-text">
           <span class="name">大龙的博客</span>
@@ -76,7 +76,7 @@ export default {
   height: calc(100vh - 80px);
   position: fixed;
   left: 0;
-  background: #202020;
+  background: rgb(47, 47, 47);
   box-sizing: inherit;
   .image {
     width: 80%;
@@ -111,7 +111,7 @@ export default {
       height: 60px;
       border-radius: 0;
       color: #ccc;
-      background: #202020;
+      background: rgb(47, 47, 47);
       border: none;
       font-size: 16px;
     }
