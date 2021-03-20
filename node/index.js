@@ -1,8 +1,12 @@
 const express = require('express')
-const app = new express();
+const globalConfig = require('./config')
+const loader = require('./loader')
+// eslint-disable-next-line new-cap
+const app = new express()
 
-app.use(express.static('../public/'))
+app.use(express.static('../dist/'))
+app.post('/editEveryday', loader.get('/editEveryday'))
 
-app.listen(9527, () => {
-    console.log('服务已启动')
+app.listen(globalConfig.port, () => {
+  console.log('服务已启动')
 })

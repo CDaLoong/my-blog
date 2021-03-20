@@ -7,20 +7,47 @@
         </el-carousel-item>
       </el-carousel>
     </div>
+    <div class="editor">
+      <el-button type="text" @click="dialogVisible = true">写博客</el-button>
+      <el-dialog
+        :visible.sync="dialogVisible"
+        width="80%"
+        :before-close="handleClose">
+        <write-blog />
+        <span slot="footer" class="dialog-footer">
+    <el-button @click="dialogVisible = false">取 消</el-button>
+    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+  </span>
+      </el-dialog>
+    </div>
   </div>
 </template>
 
 <script>
+import WriteBlog from '@/components/WriteBlog'
 export default {
   name: 'HomePage',
+  components: {
+    WriteBlog
+  },
   data () {
     return {
-      imageUrl: []
+      imageUrl: [],
+      dialogVisible: false
     }
   },
   mounted () {
     for (let i = 1; i <= 6; i++) {
       this.imageUrl.push({ url: require(`../../assets/public/images/${i}.png`), title: `${i}.png` })
+    }
+  },
+  methods: {
+    handleClose (done) {
+      this.$confirm('确认关闭？')
+        .then(_ => {
+          done()
+        })
+        .catch(_ => {})
     }
   }
 }
