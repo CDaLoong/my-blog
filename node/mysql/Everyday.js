@@ -1,9 +1,9 @@
 const DBUtill = require('./DBUtil')
 
-const insertEveryday (content, ctime, success) {
+const insertEveryday = (content, ctime, success) => {
   const insertSql = "insert into everyday ('content', 'ctime') values (?, ?)"
-  const params = [content, ctime];
-  const connection = DBUtill.createConnection();
+  const params = [content, ctime]
+  const connection = DBUtill.createConnection()
   connection.connect()
   connection.query(insertSql, params, (error, result) => {
     if (error === null || undefined) {
