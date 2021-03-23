@@ -20,6 +20,7 @@
         </div>
       </li>
     </ul>
+    <div id="SOHUCS" />
   </div>
 </template>
 
@@ -41,6 +42,13 @@ export default {
       }],
       iconClass: false
     }
+  },
+  created () {
+    console.log(window.changyan, 112121)
+    window.changyan.api.config({
+      appid: 'cyvmIWqvB',
+      conf: 'prod_17c153b50cd48a6b439c99011041f784'
+    })
   },
   methods: {
     watchBtn (index) {

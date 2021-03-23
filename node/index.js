@@ -6,7 +6,7 @@ const app = new express()
 
 app.use(express.static('../dist/'))
 app.post('/editEveryday', loader.get('/editEveryday'))
-
+app.get('/getEveryday', loader.get('/getEveryday'))
 app.listen(globalConfig.port, () => {
   console.log('服务已启动')
 })

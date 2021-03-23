@@ -6,7 +6,7 @@ module.exports = {
     disableHostCheck: true,
     proxy: {
       '/api': {
-        target: 'http://localhost:9527',
+        target: 'http://127.0.0.1:9527',
         changeOrigin: true,
         pathRewrite: {
           '^/api': ''
@@ -16,6 +16,11 @@ module.exports = {
     overlay: {
       warnings: false,
       errors: true
+    }
+  },
+  configureWebpack: {
+    externals: {
+      changyan: 'changyan'
     }
   }
 }

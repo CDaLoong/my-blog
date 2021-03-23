@@ -7,6 +7,7 @@
 
 <script>
 import E from 'wangeditor'
+// import { setEveryday } from '@/api'
 export default {
   name: 'WriteBlog',
   data () {
