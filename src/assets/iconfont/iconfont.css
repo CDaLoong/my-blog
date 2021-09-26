@@ -1,10 +1,8 @@
-@font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1616036014294'); /* IE9 */
-  src: url('iconfont.eot?t=1616036014294#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAARAAAsAAAAACJQAAAPzAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDHAqESIN/ATYCJAMQCwoABCAFhG0HTRt2BxEVnG/JfhzkZC4rnlmxENevoonGvsfzT/ft3Jn3WxeBDSMIOJGAowwyjRPNh8/L3v/JtKnh0cJOt4D3BuIIBgvqNkvbIr1pKEsfsUh70agd2Y4D340Xn7h3+luA+XznXS5jTZ6Tok9dgNHYGtDe2AbpPCpAbBle6wROE8AMroKR7NxiJTiwUCcFkIXz5kwDF7GALcgNOBDoZaxkQTqhAEeb6HXA2/l9PiEyHNCgYKDOvM/OmYn0t/Fv/zC8jjfRIiDtzgV6HXTAFRSQuZmeBxgvfMXAUOzPIhZMwIECXXWsfvtHp8OypWg4TYOmfzwKRA+qZgGMW6QDv3hDEmhXg0lA+weyNIALopuA7wPkyugOzjsVGBA3S2NjExPj7BnNaqnyrkT67QbkqnsauUUlVtwRbfqseaH8tlJY3nc5RWzTXLxq1y+lSq3Kc8I0SVLLskYUVYIwXlcpXVF4piRNGdhrZ9G3m99laN68ZyLNNLJoedyE5l38bhuLgb3Veww3CK+V4gPV9gFCBMmx/4Bv/7Df9vM2l0W/kYN2ne5XLQf1S1HVoupaS4Es47BgvVt0GeAufftdlPyQn/xII73VuS6b5FfodsIiuJD19WGiSyI/5LtPCLipC+27fMiMKmF8fNngQosThW6T/PTYiduqtqzaunl1VdvEzWHp9XUbJoOy3k1sE1RkxQpi8qtXLFdRNV2+vLdq+Qr1mnwybRopIPmUKp8SBSIQwhFQNhtbXLK9ZOFkYWJrYgHnpaNxtlyumSZZsoJPgXvnH7Du7uwDuu8iHY7x0M2nTDbNi9AWPzP8L196XrcwV4NN8Ra7tIqWOUx7oFP2ukIuz5vJ4vJDbtfezg/N0me89fPGNzlmGzAdrbO1ikepDFqMvntuizurIDvZB+7umAp1bD9NYwH6Xrr3HRiF02vbkylmyX84o0Mv+659ccDJ+w8UGB64kdLK0jsurVhQkly1FisoDInsLRSEkjTATLPDfY6z87QL3bFyNgEHmwAN+nBBBwdvSjGCMcAI0RiBQxpmCJK3fg4ry8GAsAaAszoEAnMHQWGKi2Bg7gaFZTyBAra+QA/mYeAZeWe949gmerRnDAUTiP6g47oi3S4jN/eOqitCDssd1hvZaB94thuPnbFC7mKO+ShfhIC4LuGEzsOiqKHhOsNY7FSkCRyHsl5kx3VpjewxFBIoASJ/QIvVKmSVFqPE9++Q0imEuIBUFHxDzNDdA4/NrUA5a6pKpFO5xPhQfEIQQFitBE7IhQotXANN9rAMiglb2iDYCDi4GFXV2MPryjNcBzPq3pWWnsqg/wwlTjFZPPEn2/9zcXXrjGj695SWtIssCwA=') format('woff2'),
-  url('iconfont.woff?t=1616036014294') format('woff'),
-  url('iconfont.ttf?t=1616036014294') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  url('iconfont.svg?t=1616036014294#iconfont') format('svg'); /* iOS 4.1- */
+@font-face {
+  font-family: "iconfont"; /* Project id 2111392 */
+  src: url('iconfont.woff2?t=1631604678654') format('woff2'),
+       url('iconfont.woff?t=1631604678654') format('woff'),
+       url('iconfont.ttf?t=1631604678654') format('truetype');
 }
 
 .iconfont {
@@ -15,15 +13,75 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-watched:before {
-  content: "\e676";
+.icon-liebiao:before {
+  content: "\e61f";
 }
 
-.icon-TextAlignJustify:before {
-  content: "\e6f5";
+.icon-weixin:before {
+  content: "\e6b1";
 }
 
-.icon-github:before {
-  content: "\e638";
+.icon-zhuye:before {
+  content: "\e635";
+}
+
+.icon-mes:before {
+  content: "\e626";
+}
+
+.icon-liuyan:before {
+  content: "\e639";
+}
+
+.icon-jiantoushang:before {
+  content: "\e62c";
+}
+
+.icon-jiantouxia:before {
+  content: "\e62d";
+}
+
+.icon-zhengque1:before {
+  content: "\e600";
+}
+
+.icon-empty:before {
+  content: "\e6a6";
+}
+
+.icon-guanbi:before {
+  content: "\e710";
+}
+
+.icon-cuowu:before {
+  content: "\e7fa";
+}
+
+.icon-sign_qq:before {
+  content: "\e637";
+}
+
+.icon-blog:before {
+  content: "\e7c6";
+}
+
+.icon-set_about_hov:before {
+  content: "\e688";
+}
+
+.icon-code:before {
+  content: "\e61e";
+}
+
+.icon-Emailus:before {
+  content: "\e636";
+}
+
+.icon-github-fill:before {
+  content: "\eac8";
+}
+
+.icon-a-ziyuan35:before {
+  content: "\e60c";
 }
 

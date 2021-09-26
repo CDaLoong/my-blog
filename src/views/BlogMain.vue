@@ -34,6 +34,7 @@
 
 <script>
 export default {
+  name: 'BlogMain',
   data () {
     return {
       BtnShow: false,
@@ -248,6 +249,7 @@ export default {
 
 .container {
   width: 100%;
+  height: 100vh;
   margin-top: 80px;
   box-sizing: border-box;
 }
