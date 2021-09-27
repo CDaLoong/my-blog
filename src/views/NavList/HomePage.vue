@@ -37,8 +37,9 @@ export default {
     }
   },
   mounted () {
+    // TODO: 暂时使用一张图
     for (let i = 1; i <= 6; i++) {
-      this.imageUrl.push({ url: require(`../../assets/public/images/${i}.png`), title: `${i}.png` })
+      this.imageUrl.push({ url: require('../../assets/public/images/1.png'), title: `${i}.png` })
     }
   },
   methods: {
