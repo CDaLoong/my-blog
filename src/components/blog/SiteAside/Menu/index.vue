@@ -1,16 +1,16 @@
 <template>
   <nav class="menu-container">
-    <a
+    <RouterLink
+      :exact="item.exact"
       v-for="item in items"
       :key="item.link"
-      :href="item.link"
-      :class="{
-        selected: isSelected(item),
-      }"
+      :to="{ name: item.name }"
+      active-class="selected"
+      exact-active-class=""
     >
       <Icon :type="item.icon" style="margin-right: 10px" />
       <span>{{ item.title }}</span>
-    </a>
+    </RouterLink>
   </nav>
 </template>
 
@@ -20,44 +20,39 @@ export default {
     return {
       items: [
         {
-          link: '/',
+          name: 'BlogHome',
           title: '首页',
           icon: 'home',
+          exact: true,
         },
         {
-          link: '/blog',
+          name: 'BlogArticle',
           title: '文章',
           icon: 'blog',
-          startWith: true, // 只要当前路径以link开头，当前菜单就是选中的
+          exact: false, // 激活状态是否要精确匹配
         },
         {
-          link: '/about',
+          name: 'BlogAbout',
           title: '关于我',
           icon: 'about',
+          exact: true,
         },
         {
-          link: '/project',
+          name: 'BlogProject',
           title: '项目&效果',
           icon: 'code',
+          exact: true,
         },
         {
-          link: '/message',
+          name: 'BlogMessage',
           title: '留言板',
           icon: 'list',
+          exact: true,
         },
       ],
     };
   },
   methods: {
-    isSelected(item) {
-      const link = item.link.toLowerCase() // 菜单的链接地址
-      const curPathname = location.pathname.toLowerCase() // 当前浏览器的访问路径
-      if (item.startWith) {
-        return curPathname.startsWith(link);
-      } else {
-        return curPathname === link;
-      }
-    },
   },
 };
 </script>

@@ -5,7 +5,13 @@
 <!--        <router-link to="/home">小龙哥</router-link>-->
       </div>
       <div class="nav-list">
-        <router-link v-for="nav in navList" :key="nav.url" @click.native="HomeShow(nav.url)" :to="nav.url">{{ nav.title }}</router-link>
+        <router-link
+          v-for="nav in navList"
+          :key="nav.url"
+          :to="{ name: nav.name }"
+        >
+          {{ nav.title }}
+        </router-link>
       </div>
       <div
         class="nav-btn iconfont icon-TextAlignJustify"
@@ -22,12 +28,20 @@
           @click="BtnShow = !BtnShow"
         ></div>
         <div class="btn-list" ref="nav">
-          <router-link v-for="nav in navList" :key="nav.url" @click.native="HomeShow(nav.url)" :to="nav.url">{{ nav.title }}</router-link>
+          <router-link
+            v-for="nav in navList"
+            :key="nav.url"
+            :to="{ name: nav.name }"
+          >
+            {{ nav.title }}
+          </router-link>
         </div>
       </div>
     </div>
     <div class="container" :class="{ containerTop: isHome }">
-      <router-view />
+      <keep-alive>
+        <router-view />
+      </keep-alive>
     </div>
   </div>
 </template>
@@ -38,41 +52,44 @@ export default {
   data () {
     return {
       BtnShow: false,
-      isHome: true,
       navHeight: '',
       navList: [
         {
-          url: '/home',
-          title: 'Home'
+          name: 'HomePage',
+          title: 'Home',
+          exact: true,
         },
         {
-          url: '/blog',
-          title: 'Blog'
+          name: 'Blog',
+          title: 'Blog',
+          exact: true,
         },
         {
-          url: '/essay',
-          title: 'Essay'
+          name: 'Essay',
+          title: 'Essay',
+          exact: true,
         },
         {
-          url: '/WishingWall',
-          title: 'WishingWall'
+          name: 'WishingWall',
+          title: 'WishingWall',
+          exact: true,
         },
         {
-          url: '/about',
-          title: 'About'
+          name: 'About',
+          title: 'About',
+          exact: true,
         }
       ]
     }
   },
   computed: {
+    isHome() {
+      return this.$route.path === '/'
+    }
   },
   created () {
-    this.isHome = this.$route.path === '/home'
   },
   methods: {
-    HomeShow (btn) {
-      this.isHome = btn === '/home'
-    }
   },
   mounted () {
   },

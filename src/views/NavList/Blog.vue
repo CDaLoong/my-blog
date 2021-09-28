@@ -7,7 +7,9 @@
         </div>
       </template>
       <template #default>
-        中间主区域
+        <keep-alive>
+          <router-view />
+        </keep-alive>
       </template>
       <template #right>
         右边区域
@@ -20,6 +22,7 @@
 import Layout from '@/components/blog/Layout';
 import SiteAside from '@/components/blog/SiteAside';
 export default {
+  name: 'Blog',
   components: {
     Layout,
     SiteAside,
