@@ -4,15 +4,15 @@ import router from './router'
 import store from './store'
 import './style/index.scss'
 import './assets/iconfont.css'
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
 import Icon from './components/Icon'
 import Avatar from './components/Avatar'
 
+import showMessage from './utils/showMessage';
+
 Vue.config.productionTip = false
-Vue.use(ElementUI)
 Vue.component(Icon.name, Icon)
 Vue.component(Avatar.name, Avatar)
+Vue.prototype.$showMessage = showMessage;
 
 new Vue({
   router,

@@ -1,3 +1,4 @@
+// icon图标信息，来自iconfont
 export const icon = [
   {
     icon_id: '405747',
@@ -43,7 +44,7 @@ export const icon = [
   },
   {
     icon_id: '3051174',
-    name: 'true',
+    name: 'success',
     font_class: 'icon-zhengque1',
     unicode: 'e600',
     unicode_decimal: 58880
@@ -64,7 +65,7 @@ export const icon = [
   },
   {
     icon_id: '12148932',
-    name: 'false',
+    name: 'error',
     font_class: 'icon-cuowu',
     unicode: 'e7fa',
     unicode_decimal: 59386
@@ -113,7 +114,7 @@ export const icon = [
   },
   {
     icon_id: '22553270',
-    name: 'warning',
+    name: 'warn',
     font_class: 'icon-a-ziyuan35',
     unicode: 'e60c',
     unicode_decimal: 58892
@@ -124,5 +125,12 @@ export const icon = [
     font_class: 'icon-liebiao',
     unicode: 'e61f',
     unicode_decimal: 58911
+  },
+  {
+    icon_id: '736792',
+    name: 'info',
+    font_class: 'icon-info',
+    unicode: 'e6d0',
+    unicode_decimal: 59088
   },
 ]

@@ -85,3 +85,7 @@
 .icon-liebiao::before{
     content: '\e61f'
 }
+
+.icon-info::before{
+    content: '\e6d0'
+}
