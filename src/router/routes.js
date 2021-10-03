@@ -9,6 +9,7 @@ import BlogAbout from '@/views/components/BlogList/About/index';
 import BlogArticle from '@/views/components/BlogList/Article/index';
 import BlogProject from '@/views/components/BlogList/Project/index';
 import BlogMessage from '@/views/components/BlogList/Message/index';
+import BlogDetail from '@/views/components/BlogList/Article/Detail/index';
 
 export default [
   {
@@ -46,6 +47,11 @@ export default [
         name: 'CategoryBlogArticle',
         path: '/article/cate/:categoryId',
         component: BlogArticle
+      },
+      {
+        name: 'BlogDetail',
+        path: '/article/:id',
+        component: BlogDetail
       },
       {
         name: 'BlogProject',
