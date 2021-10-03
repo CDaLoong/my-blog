@@ -13,9 +13,6 @@ export default {
       required: true
     }
   },
-  created () {
-    console.log('调用了')
-  },
   computed: {
     // 图标类样式
     fontClass() {

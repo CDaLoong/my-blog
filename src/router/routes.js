@@ -43,6 +43,11 @@ export default [
         component: BlogArticle
       },
       {
+        name: 'CategoryBlogArticle',
+        path: '/article/cate/:categoryId',
+        component: BlogArticle
+      },
+      {
         name: 'BlogProject',
         path: 'project',
         component: BlogProject
