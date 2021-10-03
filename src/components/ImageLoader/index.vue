@@ -57,7 +57,7 @@ export default {
   position: relative;
   overflow: hidden;
   img {
-    .self-fill();
+    @include self-fill();
     object-fit: cover;
   }
 

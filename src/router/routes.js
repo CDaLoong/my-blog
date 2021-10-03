@@ -4,11 +4,11 @@ import Blog from '@/views/NavList/Blog';
 import Essay from '@/views/NavList/Essay';
 import WishingWall from '@/views/NavList/WishingWall';
 
-import BlogHome from '@/views/components/BlogList/Home';
-import BlogAbout from '@/views/components/BlogList/About';
-import BlogArticle from '@/views/components/BlogList/Article';
-import BlogProject from '@/views/components/BlogList/Project';
-import BlogMessage from '@/views/components/BlogList/Message';
+import BlogHome from '@/views/components/BlogList/Home/index';
+import BlogAbout from '@/views/components/BlogList/About/index';
+import BlogArticle from '@/views/components/BlogList/Article/index';
+import BlogProject from '@/views/components/BlogList/Project/index';
+import BlogMessage from '@/views/components/BlogList/Message/index';
 
 export default [
   {

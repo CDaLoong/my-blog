@@ -12,7 +12,6 @@
         </keep-alive>
       </template>
       <template #right>
-        右边区域
       </template>
     </Layout>
   </div>
@@ -34,7 +33,6 @@ export default {
 .blog-container {
   width: 100%;
   height: 100%;
-  //@include self-fill(fixed);
 }
 .aside {
   width: 250px;

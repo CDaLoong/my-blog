@@ -13,20 +13,18 @@
           {{ nav.title }}
         </router-link>
       </div>
-      <div
-        class="nav-btn iconfont icon-TextAlignJustify"
-        @click="BtnShow = !BtnShow"
-      ></div>
-      <div class="btn-box" :class="{ show: BtnShow }">
+      <div class="nav-btn" @click="btnShow = true">
+        <icon type="list" />
+      </div>
+      <div class="btn-box" :class="{ show: btnShow }" >
         <div class="btn-logo">
           <div class="logo">
 <!--            <router-link to="/home">龙哥</router-link>-->
           </div>
         </div>
-        <div
-          class="btn-close iconfont icon-TextAlignJustify"
-          @click="BtnShow = !BtnShow"
-        ></div>
+        <div class="btn-close" @click="btnShow = false">
+          <icon type="close" />
+        </div>
         <div class="btn-list" ref="nav">
           <router-link
             v-for="nav in navList"
@@ -51,8 +49,7 @@ export default {
   name: 'BlogMain',
   data () {
     return {
-      BtnShow: false,
-      navHeight: '',
+      btnShow: false,
       navList: [
         {
           name: 'HomePage',
@@ -266,11 +263,12 @@ export default {
 
 .container {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 80px);
   margin-top: 80px;
   box-sizing: border-box;
 }
 .containerTop {
   margin-top: 100px;
+  height: calc(100vh - 100px);
 }
 </style>

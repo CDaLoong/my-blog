@@ -2,8 +2,9 @@ import qs from 'qs';
 import axios from 'axios';
 import { convertUrl } from './utils';
 import { getZhMessage } from './errorMessage';
-import { DfMessageBox } from 'dfview';
+import showMessage from '@/utils/showMessage';
 
+// axios拦截器，处理返回回来的数据
 const doRequest = (options) => {
   const config = Object.assign({
     timeout: 10 * 1000, // 超时时间
@@ -27,10 +28,11 @@ const doRequest = (options) => {
     }
   }).catch(err => {
     if (err.type === 'warning') {
-      DfMessageBox.warning(err.message)
+      showMessage({ content: err.message, type: 'warn' })
     } else {
       const title = getZhMessage(err.message);
       const message = `${JSON.stringify(options, null, '\t')} \n\n ${err.stackTrace || ''}`;
+      showMessage({ content: message, type: 'error' })
       console.error(title, message);
     }
 
