@@ -19,7 +19,7 @@ export default {
 
 <style lang="scss" scoped>
 .empty-container {
-  .self-center();
+  @include self-center();
   color: $gray;
   text-align: center;
 }

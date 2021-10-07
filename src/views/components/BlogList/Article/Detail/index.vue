@@ -20,6 +20,7 @@ import BlogDetail from './BlogDetail';
 import BlogTOC from '../BlogTOC';
 import BlogComment from '../BlogComment';
 import mainScroll from '@/mixins/mainScroll.js';
+import { titleController } from '@/utils';
 
 export default {
   name: 'Detail',
@@ -39,7 +40,14 @@ export default {
   },
   methods: {
     async fetchData() {
-      return await getBlog(this.$route.params.id);
+      const resp = await getBlog(this.$route.params.id);
+      if (!resp) {
+        // TODO 文章不存在，暂跳404，后续完善
+        this.$router.push('/404');
+        return;
+      }
+      titleController.setRouteTitle(resp.title);
+      return resp;
     },
   },
 };
