@@ -24,6 +24,9 @@ Vue.prototype.$showMessage = showMessage;
 Vue.directive('loading', vLoading);
 Vue.directive('lazy', vLazy);
 
+// 获取全局数据
+store.dispatch('setting/fetchSetting')
+
 new Vue({
   router,
   store,

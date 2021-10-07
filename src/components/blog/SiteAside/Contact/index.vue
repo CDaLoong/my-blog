@@ -1,34 +1,35 @@
 <template>
   <ul class="contact-container">
     <li>
-      <a href="">
+      <a target="_blank" :href="data.github">
         <div class="icon">
           <icon type="github" />
         </div>
-        <span>CDaLoong</span>
+        <span>{{ data.githubName }}</span>
       </a>
     </li>
     <li>
-      <a href="mailto:cdaloong@gmail.com">
+      <a :href="`mailto:${data.mail}`">
         <div class="icon">
           <icon type="email" />
         </div>
-        <span>cdaloong@gmail.com</span>
+        <span>{{ data.mail }}</span>
       </a>
     </li>
     <li>
       <a
-        href="tencent://message/?Menu=yes&uin=3263023350&Service=300&sigT=45a1e5847943b64c6ff3990f8a9e644d2b31356cb0b4ac6b24663a3c8dd0f8aa12a595b1714f9d45"
+        :href="
+          `tencent://message/?Menu=yes&uin=${data.qq}&Service=300&sigT=45a1e5847943b64c6ff3990f8a9e644d2b31356cb0b4ac6b24663a3c8dd0f8aa12a595b1714f9d45`
+        "
       >
         <div class="icon">
           <icon type="qq" />
         </div>
-        <span>850122312</span>
+        <span>{{ data.qq }}</span>
       </a>
       <div class="pop">
         <img
-          src="http://www.duyiedu.com/source/img/%E5%85%AC%E4%BC%97%E5%8F%B7%E4%BA%8C%E7%BB%B4%E7%A0%81.png"
-          alt=""
+          :src="data.qqQrCode" alt="qq"
         />
       </div>
     </li>
@@ -37,12 +38,11 @@
         <div class="icon weixin">
           <icon type="wechat" />
         </div>
-        <span>CDaLoong</span>
+        <span>{{ data.weixin }}</span>
       </a>
       <div class="pop">
         <img
-          src="http://www.duyiedu.com/source/img/%E5%85%AC%E4%BC%97%E5%8F%B7%E4%BA%8C%E7%BB%B4%E7%A0%81.png"
-          alt=""
+          :src="data.weixinQrCode" alt="wexin"
         />
       </div>
     </li>
@@ -50,7 +50,9 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
+  computed: mapState('setting', ['data']),
 };
 </script>
 
