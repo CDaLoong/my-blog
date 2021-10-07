@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import RightList from './RightList';
+import RightList from '../BlogList/RightList';
 import fetchData from '@/mixins/fetchData.js';
 import { getBlogCategories } from '@/api/testApi/blog.js';
 export default {

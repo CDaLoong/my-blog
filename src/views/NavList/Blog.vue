@@ -14,17 +14,20 @@
       <template #right>
       </template>
     </Layout>
+    <ToTop />
   </div>
 </template>
 
 <script>
 import Layout from '@/components/blog/Layout';
 import SiteAside from '@/components/blog/SiteAside';
+import ToTop from '@/components/ToTop';
 export default {
   name: 'Blog',
   components: {
     Layout,
     SiteAside,
+    ToTop,
   },
 };
 </script>

@@ -7,10 +7,12 @@ import './assets/iconfont.css'
 import Icon from './components/Icon'
 import Avatar from './components/Avatar'
 import './mock'
+import './eventBus'
 
 import showMessage from './utils/showMessage';
 
 import vLoading from './directives/loading';
+import vLazy from './directives/lazy';
 
 Vue.config.productionTip = false
 Vue.component(Icon.name, Icon)
@@ -20,6 +22,7 @@ Vue.prototype.$showMessage = showMessage;
 
 // 注册全局指令
 Vue.directive('loading', vLoading);
+Vue.directive('lazy', vLazy);
 
 new Vue({
   router,
