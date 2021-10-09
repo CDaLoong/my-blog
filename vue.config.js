@@ -20,7 +20,6 @@ module.exports = {
   },
   configureWebpack: {
     externals: {
-      changyan: 'changyan'
     }
   },
   chainWebpack: config => {
