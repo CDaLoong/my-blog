@@ -67,7 +67,7 @@ export default {
   watch: {
     param: {
       handler(newVal, oldVal) {
-        if (newVal && this.checkPath.exec(this.$route.path) !== null) this.fetchData()
+        if (newVal && this.checkPath.exec(this.$route.path) !== null && newVal !== oldVal) this.fetchData()
       },
       immediate: true,
       deep: true,
