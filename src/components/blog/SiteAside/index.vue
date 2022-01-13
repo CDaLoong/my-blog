@@ -7,7 +7,7 @@
     <Menu />
     <Contact v-if="data" />
     <p v-if="data" class="footer">
-      {{ data.icp }}
+      <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">{{ data.icp }}</a>
     </p>
   </div>
 </template>
@@ -42,6 +42,9 @@ export default {
 .footer {
   text-align: center;
   font-size: 12px;
+  a:hover{
+    color: skyblue;
+  }
 }
 .title {
   font-size: 1em;

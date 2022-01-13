@@ -1,6 +1,6 @@
 <template>
   <div class="blog-toc-container">
-    <h2>目录</h2>
+    <h2 style="margin-bottom: 20px">目录</h2>
     <RightList :list="tocWithSelect" @select="handleSelect" />
   </div>
 </template>

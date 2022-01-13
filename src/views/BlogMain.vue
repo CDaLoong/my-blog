@@ -1,9 +1,7 @@
 <template>
   <div class="main">
     <div class="nav-box" :class="{ home: isHome }">
-      <div class="logo">
-<!--        <router-link to="/home">小龙哥</router-link>-->
-      </div>
+      <router-link :to="{name: 'HomePage'}"><div class="logo"></div></router-link>
       <div class="nav-list">
         <router-link
           v-for="nav in navList"
@@ -18,9 +16,7 @@
       </div>
       <div class="btn-box" :class="{ show: btnShow }" >
         <div class="btn-logo">
-          <div class="logo">
-<!--            <router-link to="/home">龙哥</router-link>-->
-          </div>
+          <router-link :to="{name: 'HomePage'}"><div class="logo"></div></router-link>
         </div>
         <div class="btn-close" @click="btnShow = false">
           <icon type="close" />
@@ -108,7 +104,8 @@ export default {
   position: fixed;
   color: #fff;
   top: 0;
-  z-index: 10000;
+  //z-index: 10000;
+  transition: all 0.3s ease-out;
 
   //logo
   .logo {

@@ -1,19 +1,18 @@
 <template>
   <Layout>
     <div ref="mainContainer" class="main-container" v-loading="isLoading">
-      <BlogDetail :blog="data" v-if="data" />
+      <BlogDetail v-if="data" :blog="data" />
       <BlogComment v-if="!isLoading" />
     </div>
     <template #right>
       <div class="right-container" v-loading="isLoading">
-        <BlogTOC :toc="data.toc" v-if="data" />
+        <BlogTOC v-if="data" :toc="data.toc" />
       </div>
     </template>
   </Layout>
 </template>
 
 <script>
-import fetchData from '@/mixins/fetchData';
 import { getBlog } from '@/api/testApi/blog';
 import Layout from '@/components/blog/Layout';
 import BlogDetail from './BlogDetail';
@@ -30,7 +29,20 @@ export default {
     BlogTOC,
     BlogComment,
   },
-  mixins: [fetchData(null), mainScroll('mainContainer')],
+  data() {
+    return {
+      isLoading: false,
+      data: null,
+      checkPath: /^\/article\/\w+$/,
+    };
+  },
+  computed: {
+    param() {
+      if (this.$route.params.id) return this.$route.params.id;
+      return null;
+    }
+  },
+  mixins: [mainScroll('mainContainer')],
   updated() {
     const hash = location.hash;
     location.hash = '';
@@ -40,15 +52,26 @@ export default {
   },
   methods: {
     async fetchData() {
+      this.isloading = true;
       const resp = await getBlog(this.$route.params.id);
       if (!resp) {
-        // TODO 文章不存在，暂跳404，后续完善
+        // 文章不存在，暂跳404，后续完善
         this.$router.push('/404');
         return;
       }
       titleController.setRouteTitle(resp.title);
-      return resp;
+      this.data = resp;
+      this.isloading = false;
     },
+  },
+  watch: {
+    param: {
+      handler(newVal, oldVal) {
+        if (newVal && this.checkPath.exec(this.$route.path) !== null) this.fetchData()
+      },
+      immediate: true,
+      deep: true,
+    }
   },
 };
 </script>
