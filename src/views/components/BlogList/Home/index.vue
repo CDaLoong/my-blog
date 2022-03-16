@@ -1,52 +1,55 @@
 <template>
-  <div
-    v-loading="loading"
-    class="home-container"
-    ref="container"
-    @wheel="handleWheel"
-  >
-    <ul
-      class="carousel-container"
-      :style="{
-        marginTop,
-      }"
-      @transitionend="handleTransitionEnd"
-    >
-      <li v-for="item in data" :key="item.id">
-        <CarouselItem :carousel="item" />
-      </li>
-    </ul>
-    <div v-show="index >= 1" @click="switchTo(index - 1)" class="icon icon-up">
-      <icon type="arrowsUp" />
-    </div>
-    <div
-      v-show="index < data.length - 1"
-      @click="switchTo(index + 1)"
-      class="icon icon-down"
-    >
-      <icon type="arrowsDown" />
-    </div>
-    <ul class="indicator">
-      <li
-        v-for="(item, i) in data"
-        :key="item.id"
-        :class="{
-          active: i === index,
-        }"
-        @click="switchTo(i)"
-      ></li>
-    </ul>
-  </div>
+<!--  <div-->
+<!--    v-loading="loading"-->
+<!--    class="home-container"-->
+<!--    ref="container"-->
+<!--    @wheel="handleWheel"-->
+<!--  >-->
+<!--    <ul-->
+<!--      class="carousel-container"-->
+<!--      :style="{-->
+<!--        marginTop,-->
+<!--      }"-->
+<!--      @transitionend="handleTransitionEnd"-->
+<!--    >-->
+<!--      <li v-for="item in data" :key="item.id">-->
+<!--        <CarouselItem :carousel="item" />-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--    <div v-show="index >= 1" @click="switchTo(index - 1)" class="icon icon-up">-->
+<!--      <icon type="arrowsUp" />-->
+<!--    </div>-->
+<!--    <div-->
+<!--      v-show="index < data.length - 1"-->
+<!--      @click="switchTo(index + 1)"-->
+<!--      class="icon icon-down"-->
+<!--    >-->
+<!--      <icon type="arrowsDown" />-->
+<!--    </div>-->
+<!--    <ul class="indicator">-->
+<!--      <li-->
+<!--        v-for="(item, i) in data"-->
+<!--        :key="item.id"-->
+<!--        :class="{-->
+<!--          active: i === index,-->
+<!--        }"-->
+<!--        @click="switchTo(i)"-->
+<!--      ></li>-->
+<!--    </ul>-->
+<!--  </div>-->
+  <key />
 </template>
 
 <script>
-import CarouselItem from './Carouselitem';
+// import CarouselItem from './Carouselitem';
 import { mapState } from 'vuex';
+import Key from './Key'
 
 export default {
   name: 'BlogHome',
   components: {
-    CarouselItem,
+    // CarouselItem,
+    Key
   },
   data() {
     return {

@@ -6,7 +6,7 @@ import './style/index.scss'
 import './assets/iconfont.css'
 import Icon from './components/Icon'
 import Avatar from './components/Avatar'
-import './mock'
+// import './mock'
 import './eventBus'
 
 import showMessage from './utils/showMessage';
