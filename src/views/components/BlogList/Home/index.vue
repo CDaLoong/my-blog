@@ -1,4 +1,8 @@
 <template>
+  <div class="home-container">
+    <html-element class="html-element" media="" />
+    <key class="key" />
+  </div>
 <!--  <div-->
 <!--    v-loading="loading"-->
 <!--    class="home-container"-->
@@ -37,19 +41,20 @@
 <!--      ></li>-->
 <!--    </ul>-->
 <!--  </div>-->
-  <key />
 </template>
 
 <script>
 // import CarouselItem from './Carouselitem';
 import { mapState } from 'vuex';
 import Key from './Key'
+import HtmlElement from './HtmlElement'
 
 export default {
   name: 'BlogHome',
   components: {
     // CarouselItem,
-    Key
+    Key,
+    HtmlElement
   },
   data() {
     return {
@@ -109,7 +114,7 @@ export default {
   height: 100%;
   position: relative;
   overflow: hidden;
-
+  background: paleturquoise;
   ul {
     margin: 0;
     list-style: none;
@@ -183,6 +188,11 @@ export default {
     &.active {
       background: #fff;
     }
+  }
+}
+@media (max-height: 920px) {
+  .key {
+    //display: none;
   }
 }
 </style>
