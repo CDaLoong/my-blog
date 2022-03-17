@@ -9,20 +9,17 @@
 </template>
 
 <script>
+import { keyList } from './config';
+
 export default {
   name: 'Key',
   data() {
     return {
-      keyRow1: [{ key1: '💀', class: 'c1' }, { key1: '!', key2: '1', class: '' }, { key1: '@', key2: '2', class: '' }, { key1: '#', key2: '3', class: '' }, { key1: '$', key2: '4', class: '' }, { key1: '%', key2: '5', class: '' }, { key1: '^', key2: '6', class: '' }, { key1: '&', key2: '7', class: '' }, { key1: '*', key2: '8', class: '' }, { key1: '(', key2: '9', class: '' }, { key1: ')', key2: '0', class: '' }, { key1: '_', key2: '-', class: '' }, { key1: '+', key2: '=', class: '' }, { key1: '😅', class: 's4 c2' }],
-      keyRow2: [{ key1: '📑', class: 's3 c3' }, { key1: 'Q', class: '' }, { key1: 'W', class: '' }, { key1: 'E', class: '' }, { key1: 'R', class: '' }, { key1: 'T', class: '' }, { key1: 'Y', class: '' }, { key1: 'U', class: '' }, { key1: 'I', class: '' }, { key1: 'O', class: '' }, { key1: 'P', class: '' }, { key1: '{', key2: '[', class: '' }, { key1: '}', key2: ']', class: '' }, { key1: '|', key2: '\\', class: '' }],
-      keyRow3: [{ key1: '🔓', class: 's4 c4' }, { key1: 'A', class: '' }, { key1: 'S', class: '' }, { key1: 'D', class: '' }, { key1: 'F', class: '' }, { key1: 'G', class: '' }, { key1: 'H', class: '' }, { key1: 'J', class: '' }, { key1: 'K', class: '' }, { key1: 'L', class: '' }, { key1: ':', key2: ';', class: '' }, { key1: '"', key2: '\'', class: '' }, { key1: '😤', class: 's4 c5' }],
-      keyRow4: [{ key1: '💪', class: 's5 c6' }, { key1: 'Z', class: '' }, { key1: 'X', class: '' }, { key1: 'C', class: '' }, { key1: 'V', class: '' }, { key1: 'B', class: '' }, { key1: 'N', class: '' }, { key1: 'M', class: '' }, { key1: '<', key2: ',', class: '' }, { key1: '>', key2: '.', class: '' }, { key1: '?', key2: '/', class: '' }, { key1: '💪', class: 's5 c6' }],
-      keyRow5: [{ key1: '☕', class: 's3 c7' }, { key1: '🤩', class: 's3 c5' }, { key1: '⭐', class: 's3 c8' }, { key1: '', class: 's12' }, { key1: '⭐', class: 's3 c8' }, { key1: '🌈', class: 'c9' }, { key1: '👨‍', class: 'c9' }, { key1: '☕', class: 'c7' }],
       keys: null,
     }
   },
   created () {
-    this.keys = this.keyRow1.concat(this.keyRow2, this.keyRow3, this.keyRow4, this.keyRow5)
+    this.keys = keyList.keyRow1.concat(keyList.keyRow2, keyList.keyRow3, keyList.keyRow4, keyList.keyRow5)
   }
 }
 </script>
@@ -31,10 +28,6 @@ export default {
 .key-container {
   width: 100%;
   height: 100%;
-  //position: absolute;
-  //left: calc(50% + 125px);
-  //transform: translate(-50%, 0);
-  //bottom: 60px;
 }
 
 .keyboard {

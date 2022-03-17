@@ -1,8 +1,8 @@
 <template>
   <div class="html-container">
     <ul class="html-element">
-      <li v-for="(element,index) in elementList" :key="index">
-        <div v-if="element.show" class="element">
+      <li v-for="(element,index) in elementList" :key="index" class="element-container" :class="element.class">
+        <div v-if="element.show" class="element" :style="{width:element.width}">
           <span>{{element.element}}</span>
         </div>
         <div class="description-container">
@@ -20,34 +20,13 @@
 </template>
 
 <script>
+import { elementList } from './config';
+
 export default {
   name: 'HtmlElement',
   data() {
     return {
-      elementList: [
-        {
-          element: 'headheadhead',
-          name: '<head>',
-          description: 'First element of the HTML document. Contains document metadata.<br>HTML文档中的第一个元素。包含文档元数据',
-          links: [{
-            name: 'Mozilla',
-            link: 'https://developer.mozilla.org/en/HTML/Element/head'
-          }],
-          show: true
-        },
-        {
-          element: 'head',
-          name: '<head>',
-          description: 'First element of the HTML document. Contains document metadata.<br>HTML文档中的第一个元素。包含文档元数据.<br>HTML文档中的第一个元素。包含文档元数据<br>HTML文档中的第一个元素。包含文档元数据',
-          links: [{
-            name: 'Mozilla',
-            link: 'https://developer.mozilla.org/en/HTML/Element/head'
-          }],
-          show: true
-        },
-        { show: false },
-        { show: true }
-      ]
+      elementList
     }
   },
 }
@@ -56,19 +35,32 @@ export default {
 <style lang="scss" scoped>
 .html-container {
   .html-element {
-    width: 920px;
-    height: 324px;
-    margin: 60px auto;
-    border-radius: 13px;
-    padding: 18px;
+    width: 980px;
+    border: 1px solid #000;
+    margin: 120px auto 120px;
     display: grid;
     grid-template-columns: repeat(30, 1fr);
     grid-template-rows: repeat(5, 1fr);
     gap: 10px;
-    box-shadow: -3px -3px 10px #f3f5f8, 3px 3px 6px #c2ccdb;
 
+    .element-container {
+      grid-column: auto/span 1;
+      //display: grid;
+      //place-items: center;
+    }
+    .s3 {
+      grid-column: auto/span 3;
+    }
+    .s4 {
+      grid-column: auto/span 4;
+    }
+    .s5 {
+      grid-column: auto/span 5;
+    }
+    .s12 {
+      grid-column: auto/span 12;
+    }
     .element {
-      width: 66px;
       height: 66px;
       background-color: skyblue;
       border-radius: 8px;
