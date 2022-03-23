@@ -1,98 +1,67 @@
 <template>
   <div class="main">
+    <canvas ref="homeCanvas" style="position: fixed; top: 0; left: 0; pointer-events: none; z-index: -1"></canvas>
     <div class="body">
       <div>
         <p class="words-begin">与君横盘立键,</p>
         <div><p class="words-end">敲出世间繁华！</p></div>
       </div>
     </div>
-    <canvas ref="homeCanvas" style="position: fixed; top: 0; left: 0; z-index: 99; pointer-events: none;"></canvas>
     <div class="bottom"><a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">鲁ICP备2021031333号</a></div>
   </div>
 </template>
 
 <script>
+import { FlowerList } from '../canvas/Flower';
+
 export default {
   name: 'HomePage',
   components: {
   },
   data () {
     return {
-      particles: [],
-      mp: 3000,
-      angle: 0,
-      timer: null,
-    }
-  },
-  computed: {
-    canvasWidth() {
-      return window.innerWidth
-    },
-    canvasHeight() {
-      return window.innerHeight
+      canvasCtx: null,
+      flowers: null,
+      timer: null
     }
   },
   mounted () {
-    this.init()
-  },
-  destroyed() {
-    clearInterval(this.timer)
+    this.init();
+    window.onresize = this.update;
   },
   methods: {
     init() {
       // canvas init
       const canvas = this.$refs.homeCanvas;
       const ctx = canvas.getContext('2d');
-      canvas.width = this.canvasWidth;
-      canvas.height = this.canvasHeight;
-      for (let i = 0; i < this.mp; i++) {
-        this.particles.push({
-          x: Math.random() * this.canvasWidth, // x-coordinate
-          y: Math.random() * this.canvasHeight, // y-coordinate
-          r: Math.random() * 3 + 1, // radius
-          d: Math.random() * this.mp // density
-        })
-      }
-      // Lets draw the flakes
-      // animation loop
-      this.timer = setInterval(() => {
-        this.draw(ctx)
-      }, 50);
+      this.canvasCtx = ctx;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      const flowerList = new FlowerList(199, ctx, window.innerWidth, window.innerHeight);
+      flowerList.init();
+      this.flowers = flowerList;
+      this.move();
     },
-    draw(ctx) {
-      ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
-
-      ctx.fillStyle = 'rgba(230, 120, 140, 0.5)';
-      /* ctx.fillStyle = "#FF0000"; */
-      ctx.beginPath();
-      for (let i = 0; i < this.mp; i++) {
-        const p = this.particles[i];
-        ctx.moveTo(p.x, p.y);
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2, true);
+    move() {
+      this.canvasCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      for (let i = 0; i < this.flowers.length; i++) {
+        this.flowers.flowers[i].draw();
       }
-      ctx.fill();
-      this.update();
+      window.requestAnimationFrame(this.move);
     },
     update() {
-      this.angle += 0.01;
-      for (let i = 0; i < this.mp; i++) {
-        const p = this.particles[i];
-        p.y += Math.cos(this.angle + p.d) + 1 + p.r / 2;
-        p.x += Math.sin(this.angle) * 2;
-        if (p.x > this.canvasWidth || p.x < 0 || p.y > this.canvasHeight) {
-          if (i % 3 > 0) { // 66.67% of the flakes
-            this.particles[i] = { x: Math.random() * this.canvasWidth, y: -10, r: p.r, d: p.d };
-          } else {
-            if (Math.sin(this.angle) > 0) {
-              this.particles[i] = { x: -5, y: Math.random() * this.canvasHeight, r: p.r, d: p.d };
-            } else {
-              this.particles[i] = { x: this.canvasWidth + 5, y: Math.random() * this.canvasHeight, r: p.r, d: p.d };
-            }
-          }
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => {
+        this.$refs.homeCanvas.width = window.innerWidth;
+        this.$refs.homeCanvas.height = window.innerHeight;
+        for (let i = 0; i < this.flowers.length; i++) {
+          this.flowers.flowers[i].width = window.innerWidth;
+          this.flowers.flowers[i].height = window.innerHeight;
         }
-      }
+        clearTimeout(this.timer);
+      }, 200)
     }
-  }
+  },
 }
 </script>
 

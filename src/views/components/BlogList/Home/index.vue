@@ -190,7 +190,7 @@ export default {
 //    }
 //  }
 }
-@media (max-height: 920px) {
+@media (max-height: 1080px) {
   .key {
     display: none;
   }

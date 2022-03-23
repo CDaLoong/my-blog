@@ -1,8 +1,8 @@
 <template>
   <div class="html-container">
     <ul class="html-element">
-      <li v-for="(element,index) in elementList" :key="index" class="element-container" :class="element.class">
-        <div v-if="element.show" class="element" :style="{width:element.width}">
+      <li v-for="(element,index) in elements" :key="index" class="element-container" :class="element.class">
+        <div v-if="element.show" class="element" :style="{width:element.width, background:element.backColor}">
           <span>{{element.element}}</span>
         </div>
         <div class="description-container">
@@ -26,9 +26,12 @@ export default {
   name: 'HtmlElement',
   data() {
     return {
-      elementList
+      elements: null,
     }
   },
+  created () {
+    this.elements = elementList.rootEle.concat(elementList.insetEle, elementList.textEle, elementList.documentEle, elementList.groupEle, elementList.scriptEle, elementList.formEle, elementList.tableEle, elementList.interactiveEle, elementList.describe)
+  }
 }
 </script>
 
@@ -36,12 +39,11 @@ export default {
 .html-container {
   .html-element {
     width: 980px;
-    border: 1px solid #000;
-    margin: 120px auto 120px;
+    margin: 60px auto 20px;
     display: grid;
-    grid-template-columns: repeat(30, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(13, 1fr); // fr是比例
+    grid-template-rows: repeat(8, 1fr);
+    gap: 5px;
 
     .element-container {
       grid-column: auto/span 1;
@@ -61,11 +63,11 @@ export default {
       grid-column: auto/span 12;
     }
     .element {
-      height: 66px;
+      height: 50px;
       background-color: skyblue;
       border-radius: 8px;
       text-align: center;
-      line-height: 66px;
+      line-height: 50px;
       overflow: hidden;
       transition: 0.2s;
     }

@@ -231,7 +231,7 @@ export default {
 // 主页导航
 .nav-box.home {
   height: 100px;
-  background-color: #fff;
+  background-color: transparent;
   .nav-btn{
     color: #000;
   }
