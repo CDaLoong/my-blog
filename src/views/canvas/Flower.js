@@ -119,8 +119,9 @@ export class Flower {
     this.angle += this.ySpeed;
     if (this.cy > this.height + this.R * 1.3) {
       this.ySpeed = Math.random();
-      this.cy -= this.ySpeed;
-      this.yDire = 'top';
+      // this.cy -= this.ySpeed;
+      // this.yDire = 'top';
+      this.cy = -this.R * 1.3;
     } else if (this.cy < -this.R * 1.3) {
       this.ySpeed = Math.random();
       this.cy += this.ySpeed;
@@ -131,8 +132,9 @@ export class Flower {
     }
     if (this.cx > this.width + this.R * 1.3) {
       this.xSpeed = Math.random();
-      this.cx -= this.xSpeed;
-      this.xDire = 'left';
+      // this.cx -= this.xSpeed;
+      // this.xDire = 'left';
+      this.cx = -this.R * 1.3;
     } else if (this.cx < -this.R * 1.3) {
       this.xSpeed = Math.random();
       this.cx += this.xSpeed;
@@ -167,7 +169,8 @@ export class FlowerList {
   init() {
     for (let i = 0; i < this.length; i++) {
       const clarity = Math.random();
-      const color = this.colorRandom(clarity);
+      // const color = this.colorRandom(clarity);
+      const color = 'rgba(255,192,203,.6)'; // 255 192 203
       this.flowers[i] = new Flower(this.ctx, this.innerW, this.innerH, color, clarity, 60, 10);
     }
   }
