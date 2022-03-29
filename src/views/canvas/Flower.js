@@ -170,7 +170,7 @@ export class FlowerList {
     for (let i = 0; i < this.length; i++) {
       const clarity = Math.random();
       // const color = this.colorRandom(clarity);
-      const color = 'rgba(255,192,203,.6)'; // 255 192 203
+      const color = `rgba(255,192,203,${clarity})`; // 255 192 203
       this.flowers[i] = new Flower(this.ctx, this.innerW, this.innerH, color, clarity, 60, 10);
     }
   }
