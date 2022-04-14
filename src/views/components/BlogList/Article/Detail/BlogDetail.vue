@@ -32,7 +32,7 @@ export default {
       required: true,
     },
   },
-  mounted () {
+  created () {
     console.log(this.blog)
   },
   methods: {

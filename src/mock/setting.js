@@ -3,15 +3,15 @@ Mock.mock('/api/setting', 'get', {
   code: 0,
   msg: '',
   data: {
-    avatar: 'http://www.cdaLoong.com/source/img/logo.png',
+    avatar: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F4207fc45067832f6891ce50f87c42dee9dffa1a6331ae-ik8Tce_fw658&refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1652488019&t=59142e23d94e3b628e91f18d238ebd35',
     siteTitle: 'DaLoong的博客',
     github: 'https://github.com/CDaLoong',
     qq: '850122312',
     qqQrCode:
-      'http://www.cdaloong.com/source/img/%E5%B0%8F%E6%B8%A1%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%BB%B4%E7%A0%81.png',
+      'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F4207fc45067832f6891ce50f87c42dee9dffa1a6331ae-ik8Tce_fw658&refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1652488019&t=59142e23d94e3b628e91f18d238ebd35',
     weixin: 'CDaLoong',
     weixinQrCode:
-      'http://www.cdaloong.com/source/img/%E5%85%AC%E4%BC%97%E5%8F%B7%E4%BA%8C%E7%BB%B4%E7%A0%81.png',
+      'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F4207fc45067832f6891ce50f87c42dee9dffa1a6331ae-ik8Tce_fw658&refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1652488019&t=59142e23d94e3b628e91f18d238ebd35',
     mail: 'CDaLoong@gmail.com',
     icp: '鲁ICP备2021031333号',
     githubName: 'CDaLoong',

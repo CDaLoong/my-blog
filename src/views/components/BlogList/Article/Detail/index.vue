@@ -53,6 +53,7 @@ export default {
   methods: {
     async fetchData() {
       this.isloading = true;
+      console.log(123, this.$route.params.id)
       const resp = await getBlog(this.$route.params.id);
       if (!resp) {
         // 文章不存在，暂跳404，后续完善
