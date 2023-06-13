@@ -1,15 +1,17 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-
-Vue.use(Vuex)
+import Vuex from 'vuex';
+import Vue from 'vue';
+import banner from './banner';
+import setting from './setting';
+import about from './about';
+import project from './project';
+Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
   modules: {
-  }
-})
+    banner,
+    setting,
+    about,
+    project,
+  },
+  strict: true,
+});
