@@ -1,7 +1,7 @@
 'use strict'
 const port = 9527 // dev port
 module.exports = {
-  // publicPath: '/',
+  publicPath: '/my-blog/',
   devServer: {
     port: port,
     disableHostCheck: true,

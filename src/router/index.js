@@ -8,7 +8,7 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   mode: 'history',
   routes,
-  base: process.env.BASE_URL,
+  base: '/my-blog/',
 })
 
 router.afterEach((to, from) => {
